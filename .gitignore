@@ -1,0 +1,8 @@
+# Python
+__pycache__/
+*.py[cod]
+env/
+.env
+# Data
+data/raw/
+data/embeddings/
