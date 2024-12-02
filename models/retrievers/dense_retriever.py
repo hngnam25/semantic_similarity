@@ -3,7 +3,7 @@ import numpy as np
 import faiss
 import os 
 from typing import List, Dict
-from utils.logger import logger
+from scripts.logging_config import logger
 
 
 def compute_embeddings(chunks: List[Dict], model_name = 'all-MiniLM-L6-V2') -> np.ndarray:

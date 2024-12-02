@@ -1,7 +1,32 @@
 from elasticsearch import Elasticsearch, helpers
 from typing import List, Dict
-from utils.logger import logger
+import os
+import dotenv
+from scripts.logging_config import logger
 
+dotenv.load_dotenv()
+
+def index_chunks_in_elasticsearch(chunks, index_name = 'legal_docs'):
+    es_url = os.getenv('ELASTICSEARCH_URL')
+    es = Elasticsearch(
+        [es_url]
+    )
+    http_auth=(os.getenv('ELASTICSEARCH_USERNAME'), os.getenv('ELASTICSEARCH_PASSWORD'))
+
+    #Create index, if it doesn't exist
+    if not es.indices.exists(index = index_name):
+        es.indices.create(index = index_name)
+    
+    # Perfroms bulk indexing of documents into ElasticSearch
+    actions = [
+        {
+            "_index": index_name,
+            "_id": chunk['chunk_id'],
+            "_source": chunk
+        }
+        for chunk in chunks
+    ]
+    helpers.bulk(es,actions)
 
 def query_elasticsearch(query_text:str, index_name:str, host: str = 'localhost', port: int = 9200 , top_k: int = 10) -> List[Dict]:
     """
@@ -61,22 +86,5 @@ def query_elasticsearch(query_text:str, index_name:str, host: str = 'localhost',
         logger.error(f"Error querying Elasticsearch: {e}")
         return[]
 
-# def index_chunks_in_elasticsearch(chunks, index_name = 'legal_docs'):
-#     es = Elasticsearch()
-
-#     #Create index, if it doesn't exist
-#     if not es.indices.exists(index = index_name):
-#         es.indices.create(index = index_name)
-    
-#     # Perfroms bulk indexing of documents into ElasticSearch
-#     actions = [
-#         {
-#             "_index": index_name,
-#             "_id": chunk['chunk_id'],
-#             "_source": chunk
-#         }
-#         for chunk in chunks
-#     ]
-#     helpers.bulk(es,actions)
 
 # def query_elasticsearch(query_text, index_name = )

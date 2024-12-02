@@ -10,3 +10,4 @@ transformers
 beautifulsoup4
 lxml
 bs4
+python-dotenv

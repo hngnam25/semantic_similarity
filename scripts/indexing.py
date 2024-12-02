@@ -1,7 +1,10 @@
 import json
-from models.retrievers.elasticsearch_retriver import index_chunks_in_elasticsearch
-from models.retriever.dense_retriever import compute_embeddings, build_faiss_index, save_faiss_index
-from utils.logger import logger
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from models.retrievers.elasticsearch_retriever import index_chunks_in_elasticsearch  
+from models.retrievers.dense_retriever import compute_embeddings, build_faiss_index, save_faiss_index
+from logging_config import logger
 import argparse
 
 
@@ -47,9 +50,9 @@ def save_metadata(metadata: list, metadata_file: str):
         raise
 
 
-def main(preprocessed_file: str, elasticsearch_index: str, faiss_index_file:str, meta_data_file:str):
-        """
-        Main function to index documents.
+def main(preprocessed_file: str, elasticsearch_index: str, faiss_index_file:str, metadata_file:str):
+    """
+    Main function to index documents.
 
         Args:
             preprocessed_file (str): Path to the preprocessed JSONL file.
@@ -59,13 +62,11 @@ def main(preprocessed_file: str, elasticsearch_index: str, faiss_index_file:str,
 
         Returns:
             None
-        """
+    """
     try: 
         #Load preprocessed chunks
         chunks = load_preprocessed_chunks(preprocessed_file)
 
-        #Index in Elasticsearch
-        from models.retrievers.elasticsearch_retriever import index_chunks_in_elasticsearch
         index_chunks_in_elasticsearch(chunks, index_name=elasticsearch_index)
 
         #Compute embeddings for FAISS
@@ -80,13 +81,27 @@ def main(preprocessed_file: str, elasticsearch_index: str, faiss_index_file:str,
 
     except Exception as e:
         logger.error(f"Indexing failed: {e}")
+def preprocess_data():
+    logger.info("Starting the indexing pipeline.")
+    try:
+        # Your preprocessing logic
+        logger.debug("Indexing raw data successfully.")
+        # Simulating an error
+        raise ValueError("An error occurred during indexiong.")
+    except Exception as e:
+        logger.error(f"Error in preprocessing: {e}")
+        raise
 
 if __name__ == "__main__":
+    logger.info("Script started.")
     parser = argparse.ArgumentParser(description="Index documents for RAG system")
     parser.add_argument('--preprocessed_file', type=str, required=True, help='Path to preprocessed chunks JSONL file')
     parser.add_argument('--elasticsearch_index', type=str, default='legal_docs', help='Elasticsearch index name')
     parser.add_argument('--faiss_index_file', type=str, default='data/embeddings/faiss_index.index', help='Path to save FAISS index')
     parser.add_argument('--metadata_file', type=str, default='data/embeddings/chunk_metadata.json', help='Path to save metadata JSON file')
-
+    parser.add_argument('--elasticsearch_url', type=str, required=True, help='URL of the Elasticsearch instance')
     args = parser.parse_args()
     main(args.preprocessed_file, args.elasticsearch_index, args.faiss_index_file, args.metadata_file)
+    # preprocess_data()
+
+    logger.info("Script finished.")

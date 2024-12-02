@@ -1,0 +1,61 @@
+2024-12-02 15:44:53,396 - INFO - Loading faiss.
+2024-12-02 15:44:56,231 - INFO - Successfully loaded faiss.
+2024-12-02 15:46:41,245 - INFO - Loading faiss.
+2024-12-02 15:46:41,332 - INFO - Successfully loaded faiss.
+2024-12-02 15:46:41,338 - INFO - Script started.
+2024-12-02 15:46:41,339 - INFO - Starting the indexing pipeline.
+2024-12-02 15:46:41,339 - ERROR - Error in preprocessing: An error occurred during indexiong.
+2024-12-02 15:47:24,373 - INFO - Loading faiss.
+2024-12-02 15:47:24,461 - INFO - Successfully loaded faiss.
+2024-12-02 15:47:24,467 - INFO - Script started.
+2024-12-02 15:47:24,471 - INFO - Loaded 81 preprocessed chunks from data/preprocessed/processed_chunks.jsonl
+2024-12-02 15:47:24,471 - ERROR - Indexing failed: Either 'hosts' or 'cloud_id' must be specified
+2024-12-02 15:47:24,471 - INFO - Starting the indexing pipeline.
+2024-12-02 15:47:24,471 - ERROR - Error in preprocessing: An error occurred during indexiong.
+2024-12-02 15:48:03,020 - INFO - Loading faiss.
+2024-12-02 15:48:03,103 - INFO - Successfully loaded faiss.
+2024-12-02 15:48:03,109 - INFO - Script started.
+2024-12-02 15:48:03,112 - INFO - Loaded 81 preprocessed chunks from data/preprocessed/processed_chunks.jsonl
+2024-12-02 15:48:03,113 - ERROR - Indexing failed: Either 'hosts' or 'cloud_id' must be specified
+2024-12-02 15:48:03,113 - INFO - Script finished.
+2024-12-02 15:50:46,250 - INFO - Loading faiss.
+2024-12-02 15:50:46,333 - INFO - Successfully loaded faiss.
+2024-12-02 15:50:46,341 - INFO - Script started.
+2024-12-02 15:50:46,344 - INFO - Loaded 81 preprocessed chunks from data/preprocessed/processed_chunks.jsonl
+2024-12-02 15:50:46,344 - ERROR - Indexing failed: Either 'hosts' or 'cloud_id' must be specified
+2024-12-02 15:50:46,344 - INFO - Script finished.
+2024-12-02 15:52:45,033 - INFO - Loading faiss.
+2024-12-02 15:52:45,094 - INFO - Successfully loaded faiss.
+2024-12-02 15:52:45,123 - INFO - Script started.
+2024-12-02 15:54:27,828 - INFO - Loading faiss.
+2024-12-02 15:54:27,907 - INFO - Successfully loaded faiss.
+2024-12-02 15:54:27,915 - INFO - Script started.
+2024-12-02 15:55:03,207 - INFO - Loading faiss.
+2024-12-02 15:55:03,296 - INFO - Successfully loaded faiss.
+2024-12-02 15:55:03,316 - INFO - Script started.
+2024-12-02 16:02:16,559 - INFO - Loading faiss.
+2024-12-02 16:02:16,647 - INFO - Successfully loaded faiss.
+2024-12-02 16:02:16,653 - INFO - Script started.
+2024-12-02 16:02:48,105 - INFO - Loading faiss.
+2024-12-02 16:02:48,187 - INFO - Successfully loaded faiss.
+2024-12-02 16:02:48,192 - INFO - Script started.
+2024-12-02 16:03:27,102 - INFO - Loading faiss.
+2024-12-02 16:03:27,184 - INFO - Successfully loaded faiss.
+2024-12-02 16:03:27,202 - INFO - Script started.
+2024-12-02 16:03:27,215 - INFO - Loaded 81 preprocessed chunks from data/preprocessed/processed_chunks.jsonl
+2024-12-02 16:03:27,215 - ERROR - Indexing failed: Either 'hosts' or 'cloud_id' must be specified
+2024-12-02 16:03:27,215 - INFO - Script finished.
+2024-12-02 16:10:44,249 - INFO - Loading faiss.
+2024-12-02 16:10:44,326 - INFO - Successfully loaded faiss.
+2024-12-02 16:10:44,331 - INFO - Script started.
+2024-12-02 16:10:44,334 - INFO - Loaded 81 preprocessed chunks from data/preprocessed/processed_chunks.jsonl
+2024-12-02 16:10:45,208 - INFO - HEAD https://b4227e111c9e4a80b03facb4f20cfe0a.us-central1.gcp.cloud.es.io:443/legal_docs [status:401 duration:0.793s]
+2024-12-02 16:10:45,208 - ERROR - Indexing failed: AuthenticationException(401, 'None')
+2024-12-02 16:10:45,209 - INFO - Script finished.
+2024-12-02 16:16:25,575 - INFO - Loading faiss.
+2024-12-02 16:16:25,731 - INFO - Successfully loaded faiss.
+2024-12-02 16:16:25,749 - INFO - Script started.
+2024-12-02 16:16:25,752 - INFO - Loaded 81 preprocessed chunks from data/preprocessed/processed_chunks.jsonl
+2024-12-02 16:16:26,474 - INFO - HEAD https://eec1172ea90f401caf33c820b8756ba4.us-central1.gcp.cloud.es.io:443/legal_docs [status:401 duration:0.635s]
+2024-12-02 16:16:26,477 - ERROR - Indexing failed: AuthenticationException(401, 'None')
+2024-12-02 16:16:26,486 - INFO - Script finished.

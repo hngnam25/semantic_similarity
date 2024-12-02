@@ -17,8 +17,11 @@ def save_chunks_to_jsonl(chunks, output_file):
 
 def process_documents(input_dir, output_file):
     all_chunks = []
+    doc_counter = 0
     for filename in os.listdir(input_dir):
         if filename.endswith('.html'):
+            doc_counter+=1
+            print(doc_counter)
             file_path = os.path.join(input_dir, filename)
             document_id = os.path.splitext(filename)[0]
 
@@ -37,9 +40,9 @@ def process_documents(input_dir, output_file):
 
             # Process and add metadata
             for idx, chunk in enumerate(chunks):
-                chunk_text = clean_text(chunk['content'])
+                chunk_text = clean_text(chunk)
                 if chunk_text:
-                    metadata = create_chunk_metadata(document_id, idx, heading=chunk['heading'])
+                    metadata = create_chunk_metadata(document_id, idx)
                     chunk_data = {
                         'text': chunk_text,
                         **metadata
