@@ -7,3 +7,6 @@ matplotlib
 jupyter
 scikit-learn
 transformers
+beautifulsoup4
+lxml
+bs4
