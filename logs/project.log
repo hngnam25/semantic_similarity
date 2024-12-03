@@ -59,3 +59,30 @@
 2024-12-02 16:16:26,474 - INFO - HEAD https://eec1172ea90f401caf33c820b8756ba4.us-central1.gcp.cloud.es.io:443/legal_docs [status:401 duration:0.635s]
 2024-12-02 16:16:26,477 - ERROR - Indexing failed: AuthenticationException(401, 'None')
 2024-12-02 16:16:26,486 - INFO - Script finished.
+2024-12-03 11:29:08,223 - INFO - Loading faiss.
+2024-12-03 11:29:08,307 - INFO - Successfully loaded faiss.
+2024-12-03 11:29:08,312 - INFO - Script started.
+2024-12-03 11:29:08,315 - INFO - Loaded 81 preprocessed chunks from data/preprocessed/processed_chunks.jsonl
+2024-12-03 11:29:09,350 - INFO - HEAD https://eec1172ea90f401caf33c820b8756ba4.us-central1.gcp.cloud.es.io:443/legal_docs [status:404 duration:0.939s]
+2024-12-03 11:29:09,682 - INFO - PUT https://eec1172ea90f401caf33c820b8756ba4.us-central1.gcp.cloud.es.io:443/legal_docs [status:200 duration:0.332s]
+2024-12-03 11:29:11,042 - INFO - PUT https://eec1172ea90f401caf33c820b8756ba4.us-central1.gcp.cloud.es.io:443/_bulk [status:200 duration:1.349s]
+2024-12-03 11:29:11,106 - INFO - Use pytorch device_name: mps
+2024-12-03 11:29:11,106 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-V2
+2024-12-03 11:29:21,972 - INFO - Computed embeddings for 81 chunks using model'all-MiniLM-L6-V2'
+2024-12-03 11:29:21,975 - INFO - FAISS index built with 81 vectors
+2024-12-03 11:29:21,975 - ERROR - Error saving FAISS index: module 'posixpath' has no attribute 'exist'
+2024-12-03 11:29:21,975 - ERROR - Indexing failed: module 'posixpath' has no attribute 'exist'
+2024-12-03 11:29:21,975 - INFO - Script finished.
+2024-12-03 11:35:00,945 - INFO - Loading faiss.
+2024-12-03 11:35:00,997 - INFO - Successfully loaded faiss.
+2024-12-03 11:35:01,002 - INFO - Script started.
+2024-12-03 11:35:01,006 - INFO - Loaded 81 preprocessed chunks from data/preprocessed/processed_chunks.jsonl
+2024-12-03 11:35:01,842 - INFO - HEAD https://eec1172ea90f401caf33c820b8756ba4.us-central1.gcp.cloud.es.io:443/legal_docs [status:200 duration:0.790s]
+2024-12-03 11:35:03,304 - INFO - PUT https://eec1172ea90f401caf33c820b8756ba4.us-central1.gcp.cloud.es.io:443/_bulk [status:200 duration:1.456s]
+2024-12-03 11:35:03,339 - INFO - Use pytorch device_name: mps
+2024-12-03 11:35:03,340 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-V2
+2024-12-03 11:35:09,149 - INFO - Computed embeddings for 81 chunks using model'all-MiniLM-L6-V2'
+2024-12-03 11:35:09,154 - INFO - FAISS index built with 81 vectors
+2024-12-03 11:35:09,155 - INFO - FAISS index saved to data/embeddings/faiss_index.index
+2024-12-03 11:35:09,158 - INFO - Metadata saved to data/embeddings/chunk_metadata.json
+2024-12-03 11:35:09,159 - INFO - Script finished.

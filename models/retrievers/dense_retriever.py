@@ -62,7 +62,7 @@ def save_faiss_index(index: faiss.Index, index_file_path: str):
     """
     try:
         directory = os.path.dirname(index_file_path)
-        if directory and not os.path.exist(directory):
+        if directory and not os.path.exists(directory):
             os.makedirs(directory, exist_ok = True)
             logger.info(f"Created directory '{directory}' for FAISS index")
 

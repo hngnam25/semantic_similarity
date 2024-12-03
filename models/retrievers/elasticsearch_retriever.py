@@ -9,9 +9,9 @@ dotenv.load_dotenv()
 def index_chunks_in_elasticsearch(chunks, index_name = 'legal_docs'):
     es_url = os.getenv('ELASTICSEARCH_URL')
     es = Elasticsearch(
-        [es_url]
+        es_url,
+        api_key = os.getenv('ELASTICSEARCH_APIKEY')
     )
-    http_auth=(os.getenv('ELASTICSEARCH_USERNAME'), os.getenv('ELASTICSEARCH_PASSWORD'))
 
     #Create index, if it doesn't exist
     if not es.indices.exists(index = index_name):
