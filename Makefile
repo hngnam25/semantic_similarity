@@ -29,16 +29,17 @@ preprocess:
 	$(PYTHON) $(SCRIPTS_DIR)/preprocessing.py
 
 
-# Retrieval task
-retrieve:
-	$(PYTHON) $(SCRIPTS_DIR)/retrieve.py
+# Run retrieval script
+retrieve_documents:
+	python scripts/retrieval.py --query "$(QUERY)" --method "$(METHOD)" --faiss_index_file "$(FAISS_INDEX_FILE)" --metadata_file "$(METADATA_FILE)" --elasticsearch_index "$(ELASTICSEARCH_INDEX)" --top_k "$(TOP_K)" --output_file "$(OUTPUT_FILE)"
 
-# Generation task
-generate:
-	$(PYTHON) $(SCRIPTS_DIR)/generate.py
+# Run generator script
+generate_answer:
+	python scripts/generator.py --query "$(QUERY)" --retrieved_chunks_file "$(RETRIEVED_CHUNKS_FILE)" --output_file "$(OUTPUT_FILE)" --model_name "$(MODEL_NAME)"
 
-# Run full pipeline
-pipeline: preprocess index retrieve generate
+# Run full pipeline script
+run_pipeline:
+	python scripts/run_pipeline.py --query "$(QUERY)" --method "$(METHOD)" --faiss_index_file "$(FAISS_INDEX_FILE)" --metadata_file "$(METADATA_FILE)" --elasticsearch_index "$(ELASTICSEARCH_INDEX)" --model_name "$(MODEL_NAME)" --top_k "$(TOP_K)" --output_file "$(OUTPUT_FILE)"
 
 # Install dependencies
 install:

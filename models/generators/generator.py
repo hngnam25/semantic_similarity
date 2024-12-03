@@ -49,8 +49,8 @@ class LangChainGenerator:
 
              #Create a prompt template
              prompt_template = PromptTemplate(
-                 input_variables = [], 
-                 template=prompt
+                   input_variables=["question", "context"],
+                   template="Question: {question}\n\nRelevant Information:\n{context}\n\nAnswer:"
              )
 
              #Create an LLMChain
