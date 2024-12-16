@@ -14,6 +14,16 @@ install_dependencies: $(VENV)/bin/activate
 start_elasticsearch:
 	# For example, if using systemctl on Linux
 	sudo systemctl start elasticsearch
+METHOD ?= "dense"
+FAISS_INDEX_FILE ?= "data/embeddings/faiss_index.index"
+METADATA_FILE ?= "data/embeddings/chunk_metadata.json"
+ELASTICSEARCH_INDEX ?= "legal_docs"
+MODEL_NAME ?= "gpt-4o"
+TOP_K ?= 15
+RETRIEVER_OUTPUT_FILE ?= "results/retriever_output.jsonl"
+RETRIEVED_CHUNKS_FILE ?= "results/retriever_output.jsonl"
+GENERATOR_OUTPUT_FILE ?= "results/generator_output.jsonl"
+QUERY ?= ""
 
 # Index the processed chunks
 index:
@@ -35,7 +45,7 @@ retrieve_documents:
 
 # Run generator script
 generate_answer:
-	python scripts/generator.py --query "$(QUERY)" --retrieved_chunks_file "$(RETRIEVED_CHUNKS_FILE)" --output_file "$(OUTPUT_FILE)" --model_name "$(MODEL_NAME)"
+	python scripts/generator.py --query "$(QUERY)" --retrieved_chunks_file "$(RETRIEVED_CHUNKS_FILE)" --output_file "$(GENERATOR_OUTPUT_FILE)" --model_name "$(MODEL_NAME)"
 
 # Run full pipeline script
 run_pipeline:

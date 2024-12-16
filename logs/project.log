@@ -86,3 +86,176 @@
 2024-12-03 11:35:09,155 - INFO - FAISS index saved to data/embeddings/faiss_index.index
 2024-12-03 11:35:09,158 - INFO - Metadata saved to data/embeddings/chunk_metadata.json
 2024-12-03 11:35:09,159 - INFO - Script finished.
+2024-12-03 18:44:33,361 - INFO - Loading faiss.
+2024-12-03 18:44:33,431 - INFO - Successfully loaded faiss.
+2024-12-03 18:45:35,960 - INFO - Loading faiss.
+2024-12-03 18:45:35,994 - INFO - Successfully loaded faiss.
+2024-12-03 18:46:13,684 - INFO - Loading faiss.
+2024-12-03 18:46:13,721 - INFO - Successfully loaded faiss.
+2024-12-03 18:46:14,189 - INFO - FAISS index loaded from data/embeddings/faiss_index.index
+2024-12-03 18:46:14,190 - INFO - Loaded metadata for dense retrieval from {metadata_file}
+2024-12-03 18:46:14,268 - INFO - Use pytorch device_name: mps
+2024-12-03 18:46:14,268 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-12-03 18:46:19,036 - INFO - FAISS query executed succesfully for query: '
+2024-12-03 18:46:19,037 - INFO - Index 20 is out of bounds for metadata list
+2024-12-03 18:46:19,200 - ERROR - Error initializing LangChain LLM: 1 validation error for OpenAI
+  Value error, Did not find openai_api_key, please add an environment variable `OPENAI_API_KEY` which contains it, or pass `openai_api_key` as a named parameter. [type=value_error, input_value={'model_name': '', 'tempe...ne, 'http_client': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/value_error
+2024-12-03 18:46:19,200 - ERROR - Error generating answer: 1 validation error for OpenAI
+  Value error, Did not find openai_api_key, please add an environment variable `OPENAI_API_KEY` which contains it, or pass `openai_api_key` as a named parameter. [type=value_error, input_value={'model_name': '', 'tempe...ne, 'http_client': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/value_error
+2024-12-03 18:49:31,756 - INFO - Loading faiss.
+2024-12-03 18:49:31,792 - INFO - Successfully loaded faiss.
+2024-12-03 18:49:32,284 - INFO - FAISS index loaded from data/embeddings/faiss_index.index
+2024-12-03 18:49:32,285 - INFO - Loaded metadata for dense retrieval from {metadata_file}
+2024-12-03 18:49:32,307 - INFO - Use pytorch device_name: mps
+2024-12-03 18:49:32,307 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-12-03 18:49:35,669 - INFO - FAISS query executed succesfully for query: '
+2024-12-03 18:49:35,670 - INFO - Index 20 is out of bounds for metadata list
+2024-12-03 18:49:35,835 - ERROR - Error initializing LangChain LLM: Could not import openai python package. Please install it with `pip install openai`.
+2024-12-03 18:49:35,835 - ERROR - Error generating answer: Could not import openai python package. Please install it with `pip install openai`.
+2024-12-03 18:49:59,855 - INFO - Loading faiss.
+2024-12-03 18:49:59,876 - INFO - Successfully loaded faiss.
+2024-12-03 18:50:00,297 - INFO - FAISS index loaded from data/embeddings/faiss_index.index
+2024-12-03 18:50:00,298 - INFO - Loaded metadata for dense retrieval from {metadata_file}
+2024-12-03 18:50:00,320 - INFO - Use pytorch device_name: mps
+2024-12-03 18:50:00,320 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-12-03 18:50:03,413 - INFO - FAISS query executed succesfully for query: '
+2024-12-03 18:50:03,413 - INFO - Index 20 is out of bounds for metadata list
+2024-12-03 18:50:04,425 - INFO - LLM initialized with model: ''
+2024-12-03 18:50:04,425 - ERROR - Error getting answer: LangChainGenerator.construct_prompt() takes 2 positional arguments but 3 were given
+2024-12-03 18:50:04,425 - INFO - Generated answer saved to results/output.jsonl
+2024-12-03 18:55:36,213 - INFO - Loading faiss.
+2024-12-03 18:55:36,248 - INFO - Successfully loaded faiss.
+2024-12-03 18:55:36,253 - INFO - FAISS index loaded from data/embeddings/faiss_index.index
+2024-12-03 18:55:36,255 - INFO - Loaded metadata for dense retrieval from {metadata_file}
+2024-12-03 18:55:36,276 - INFO - Use pytorch device_name: mps
+2024-12-03 18:55:36,276 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-12-03 18:55:39,998 - INFO - FAISS query executed succesfully for query: 'For the lease of the Union Pacific Railroad Company, are lessee allowed to sublet the unit?
+2024-12-03 18:55:39,998 - INFO - Index 79 is out of bounds for metadata list
+2024-12-03 18:55:39,999 - INFO - Retrieved chunks saved to results/output.jsonl
+2024-12-03 19:10:57,561 - INFO - Loaded 15 retrieved chunks from results/output.jsonl
+2024-12-03 19:10:57,605 - ERROR - Error initializing LangChain LLM: 1 validation error for OpenAIChat
+  Value error, Did not find openai_api_key, please add an environment variable `OPENAI_API_KEY` which contains it, or pass `openai_api_key` as a named parameter. [type=value_error, input_value={'model_kwargs': {'model_...allowed_special': 'all'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/value_error
+2024-12-03 19:10:57,605 - ERROR - Generation failed: 1 validation error for OpenAIChat
+  Value error, Did not find openai_api_key, please add an environment variable `OPENAI_API_KEY` which contains it, or pass `openai_api_key` as a named parameter. [type=value_error, input_value={'model_kwargs': {'model_...allowed_special': 'all'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/value_error
+2024-12-03 19:17:45,816 - INFO - Loaded 15 retrieved chunks from results/output.jsonl
+2024-12-03 19:17:46,004 - INFO - LLM initialized with model: 'gpt-4o'
+2024-12-03 19:17:46,005 - ERROR - Error getting answer: LangChainGenerator.construct_prompt() takes 2 positional arguments but 3 were given
+2024-12-03 19:17:46,005 - INFO - Generated answer saved to results/output.jsonl
+2024-12-03 19:18:37,993 - ERROR - Generation failed: Expecting value: line 1 column 1 (char 0)
+2024-12-03 19:23:23,086 - ERROR - Generation failed: Expecting value: line 1 column 1 (char 0)
+2024-12-03 22:14:19,368 - ERROR - Generation failed: Expecting value: line 1 column 1 (char 0)
+2024-12-03 22:14:50,575 - ERROR - Generation failed: Expecting value: line 1 column 1 (char 0)
+2024-12-03 22:15:46,952 - INFO - Loading faiss.
+2024-12-03 22:15:47,004 - INFO - Successfully loaded faiss.
+2024-12-03 22:15:47,010 - INFO - FAISS index loaded from data/embeddings/faiss_index.index
+2024-12-03 22:15:47,011 - INFO - Loaded metadata for dense retrieval from {metadata_file}
+2024-12-03 22:15:47,076 - INFO - Use pytorch device_name: mps
+2024-12-03 22:15:47,076 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-12-03 22:15:51,421 - INFO - FAISS query executed succesfully for query: 'For the lease of the Union Pacific Railroad Company, are lessee allowed to sublet the unit?
+2024-12-03 22:15:51,421 - INFO - Index 79 is out of bounds for metadata list
+2024-12-03 22:15:51,423 - INFO - Retrieved chunks saved to results/output.jsonl
+2024-12-03 22:16:01,027 - INFO - Loaded 15 retrieved chunks from results/output.jsonl
+2024-12-03 22:16:01,118 - INFO - LLM initialized with model: 'gpt-4o'
+2024-12-03 22:16:01,118 - ERROR - Error getting answer: LangChainGenerator.construct_prompt() takes 2 positional arguments but 3 were given
+2024-12-03 22:16:01,119 - INFO - Generated answer saved to results/output.jsonl
+2024-12-03 22:18:14,878 - INFO - Loading faiss.
+2024-12-03 22:18:14,913 - INFO - Successfully loaded faiss.
+2024-12-03 22:18:14,918 - INFO - FAISS index loaded from data/embeddings/faiss_index.index
+2024-12-03 22:18:14,920 - INFO - Loaded metadata for dense retrieval from {metadata_file}
+2024-12-03 22:18:14,953 - INFO - Use pytorch device_name: mps
+2024-12-03 22:18:14,953 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-12-03 22:18:19,142 - INFO - FAISS query executed succesfully for query: 'For the lease of the Union Pacific Railroad Company, are lessee allowed to sublet the unit?
+2024-12-03 22:18:19,143 - INFO - Index 79 is out of bounds for metadata list
+2024-12-03 22:18:19,144 - INFO - Retrieved chunks saved to results/output.jsonl
+2024-12-11 14:28:45,132 - INFO - Loaded 15 retrieved chunks from results/output.jsonl
+2024-12-11 14:28:45,273 - INFO - LLM initialized with model: 'gpt-4o'
+2024-12-11 14:28:45,273 - ERROR - Error getting answer: name 'LLMChain' is not defined
+2024-12-11 14:28:45,274 - INFO - Generated answer saved to results/output.jsonl
+2024-12-11 14:31:06,422 - ERROR - Generation failed: Expecting value: line 1 column 1 (char 0)
+2024-12-11 14:33:54,685 - ERROR - Generation failed: Expecting value: line 1 column 1 (char 0)
+2024-12-11 14:44:24,644 - INFO - Loading faiss.
+2024-12-11 14:44:24,733 - INFO - Successfully loaded faiss.
+2024-12-11 14:44:24,740 - INFO - FAISS index loaded from data/embeddings/faiss_index.index
+2024-12-11 14:44:24,742 - INFO - Loaded metadata for dense retrieval from {metadata_file}
+2024-12-11 14:44:24,842 - INFO - Use pytorch device_name: mps
+2024-12-11 14:44:24,842 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-12-11 14:44:28,656 - INFO - FAISS query executed succesfully for query: 'For the lease of the Union Pacific Railroad Company, are lessee allowed to sublet the unit?
+2024-12-11 14:44:28,656 - INFO - Index 79 is out of bounds for metadata list
+2024-12-11 14:44:28,658 - INFO - Retrieved chunks saved to results/output.jsonl
+2024-12-12 11:04:43,459 - INFO - Loaded 15 retrieved chunks from results/retriever_output.jsonl
+2024-12-12 11:04:43,558 - INFO - LLM initialized with model: 'gpt-4o'
+2024-12-12 11:04:43,562 - ERROR - Error getting answer: Expected mapping type as input to PromptTemplate. Received <class 'str'>.
+For troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/INVALID_PROMPT_INPUT 
+2024-12-12 11:04:43,562 - INFO - Generated answer saved to results/generator_output.jsonl
+2024-12-12 11:13:33,962 - INFO - Loaded 15 retrieved chunks from results/retriever_output.jsonl
+2024-12-12 11:13:34,058 - INFO - LLM initialized with model: 'gpt-4o'
+2024-12-12 11:13:34,063 - ERROR - Error getting answer: Completions.create() got an unexpected keyword argument 'openai_api_keys'
+2024-12-12 11:13:34,064 - INFO - Generated answer saved to results/generator_output.jsonl
+2024-12-12 11:19:28,186 - INFO - Loaded 15 retrieved chunks from results/retriever_output.jsonl
+2024-12-12 11:19:28,275 - INFO - LLM initialized with model: 'gpt-4o'
+2024-12-12 11:19:28,883 - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 401 Unauthorized"
+2024-12-12 11:19:28,890 - ERROR - Error getting answer: Error code: 401 - {'error': {'message': 'Incorrect API key provided: "sk-FJfy*****************************************BPp". You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2024-12-12 11:19:28,893 - INFO - Generated answer saved to results/generator_output.jsonl
+2024-12-12 11:30:38,985 - INFO - Loaded 15 retrieved chunks from results/retriever_output.jsonl
+2024-12-12 11:30:39,074 - INFO - LLM initialized with model: 'gpt-4o'
+2024-12-12 11:30:41,580 - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 401 Unauthorized"
+2024-12-12 11:30:41,587 - ERROR - Error getting answer: Error code: 401 - {'error': {'message': 'Incorrect API key provided: "sk-FJfy*****************************************BPp". You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2024-12-12 11:30:41,590 - INFO - Generated answer saved to results/generator_output.jsonl
+2024-12-12 11:31:29,686 - INFO - Loaded 15 retrieved chunks from results/retriever_output.jsonl
+2024-12-12 11:31:29,778 - INFO - LLM initialized with model: 'gpt-4o'
+2024-12-12 11:31:29,783 - ERROR - Error getting answer: Completions.create() got an unexpected keyword argument 'api_keys'
+2024-12-12 11:31:29,783 - INFO - Generated answer saved to results/generator_output.jsonl
+2024-12-16 11:44:07,515 - INFO - Loaded 15 retrieved chunks from results/retriever_output.jsonl
+2024-12-16 11:44:07,628 - INFO - LLM initialized with model: 'gpt-4o'
+2024-12-16 11:44:08,138 - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 401 Unauthorized"
+2024-12-16 11:44:08,146 - ERROR - Error getting answer: Error code: 401 - {'error': {'message': 'Incorrect API key provided: "sk-FJfy*****************************************BPp". You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2024-12-16 11:44:08,148 - INFO - Generated answer saved to results/generator_output.jsonl
+2024-12-16 11:55:50,741 - INFO - Loaded 15 retrieved chunks from results/retriever_output.jsonl
+2024-12-16 11:55:50,831 - INFO - LLM initialized with model: 'gpt-4o'
+2024-12-16 11:55:53,437 - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 401 Unauthorized"
+2024-12-16 11:55:53,441 - ERROR - Error getting answer: Error code: 401 - {'error': {'message': 'Incorrect API key provided: "sk-FJfy*****************************************BPp". You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2024-12-16 11:55:53,444 - INFO - Generated answer saved to results/generator_output.jsonl
+2024-12-16 11:58:49,712 - INFO - Loaded 15 retrieved chunks from results/retriever_output.jsonl
+2024-12-16 11:58:49,814 - INFO - LLM initialized with model: 'gpt-4o'
+2024-12-16 11:58:52,522 - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 401 Unauthorized"
+2024-12-16 11:58:52,526 - ERROR - Error getting answer: Error code: 401 - {'error': {'message': 'Incorrect API key provided: "sk-proj**********************************************************************************************************************************************************esA". You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2024-12-16 11:58:52,527 - INFO - Generated answer saved to results/generator_output.jsonl
+2024-12-16 12:01:13,949 - INFO - Loaded 15 retrieved chunks from results/retriever_output.jsonl
+2024-12-16 12:01:14,042 - INFO - LLM initialized with model: 'gpt-4o'
+2024-12-16 12:01:14,969 - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 404 Not Found"
+2024-12-16 12:01:14,979 - ERROR - Error getting answer: Error code: 404 - {'error': {'message': 'This is a chat model and not supported in the v1/completions endpoint. Did you mean to use v1/chat/completions?', 'type': 'invalid_request_error', 'param': 'model', 'code': None}}
+2024-12-16 12:01:14,981 - INFO - Generated answer saved to results/generator_output.jsonl
+2024-12-16 12:07:08,577 - INFO - Loaded 15 retrieved chunks from results/retriever_output.jsonl
+2024-12-16 12:07:08,686 - INFO - LLM initialized with model: 'gpt-4o'
+2024-12-16 12:07:08,691 - ERROR - Error getting answer: Completions.create() got an unexpected keyword argument 'endpoint'
+2024-12-16 12:07:08,692 - INFO - Generated answer saved to results/generator_output.jsonl
+2024-12-16 12:07:45,296 - INFO - Loaded 15 retrieved chunks from results/retriever_output.jsonl
+2024-12-16 12:07:45,388 - INFO - LLM initialized with model: 'gpt-4o'
+2024-12-16 12:07:46,038 - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 404 Not Found"
+2024-12-16 12:07:46,045 - ERROR - Error getting answer: Error code: 404 - {'error': {'message': 'This is a chat model and not supported in the v1/completions endpoint. Did you mean to use v1/chat/completions?', 'type': 'invalid_request_error', 'param': 'model', 'code': None}}
+2024-12-16 12:07:46,046 - INFO - Generated answer saved to results/generator_output.jsonl
+2024-12-16 12:13:03,594 - INFO - Loaded 15 retrieved chunks from results/retriever_output.jsonl
+2024-12-16 12:13:03,686 - INFO - LLM initialized with model: 'gpt-4o'
+2024-12-16 12:13:04,247 - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 404 Not Found"
+2024-12-16 12:13:04,252 - ERROR - Error getting answer: Error code: 404 - {'error': {'message': 'This is a chat model and not supported in the v1/completions endpoint. Did you mean to use v1/chat/completions?', 'type': 'invalid_request_error', 'param': 'model', 'code': None}}
+2024-12-16 12:13:04,254 - INFO - Generated answer saved to results/generator_output.jsonl
+2024-12-16 12:14:17,023 - INFO - Loaded 15 retrieved chunks from results/retriever_output.jsonl
+2024-12-16 12:14:17,117 - INFO - LLM initialized with model: 'gpt-4o'
+2024-12-16 12:14:24,693 - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 404 Not Found"
+2024-12-16 12:14:24,700 - ERROR - Error getting answer: Error code: 404 - {'error': {'message': 'This is a chat model and not supported in the v1/completions endpoint. Did you mean to use v1/chat/completions?', 'type': 'invalid_request_error', 'param': 'model', 'code': None}}
+2024-12-16 12:14:24,704 - INFO - Generated answer saved to results/generator_output.jsonl
+2024-12-16 12:16:19,303 - INFO - Loaded 15 retrieved chunks from results/retriever_output.jsonl
+2024-12-16 12:16:19,448 - INFO - LLM initialized with model: 'gpt-4o'
+2024-12-16 12:16:23,381 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-16 12:16:23,406 - INFO - LLM generated an answer succesfully
+2024-12-16 12:16:23,406 - ERROR - Error getting answer: 'AIMessage' object has no attribute 'strip'
+2024-12-16 12:16:23,408 - INFO - Generated answer saved to results/generator_output.jsonl
+2024-12-16 12:17:22,168 - INFO - Loaded 15 retrieved chunks from results/retriever_output.jsonl
+2024-12-16 12:17:22,308 - INFO - LLM initialized with model: 'gpt-4o'
+2024-12-16 12:17:25,947 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-16 12:17:25,970 - INFO - LLM generated an answer succesfully
+2024-12-16 12:17:25,970 - INFO - Generated answer saved to results/generator_output.jsonl

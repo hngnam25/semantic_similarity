@@ -1,5 +1,8 @@
 import argparse
 import json 
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from typing import List, Dict
 from models.retrievers.elasticsearch_retriever import query_elasticsearch
 from models.retrievers.dense_retriever import load_faiss_index, query_faiss_index

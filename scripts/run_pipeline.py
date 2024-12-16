@@ -1,7 +1,10 @@
 
 import argparse
-from scripts.retrieval import retrieve_documents
-from models.generators.langchain_generator import LangChainGenerator
+from retrieval import retrieve_documents
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from models.generators.generator import LangChainGenerator
 from  scripts.logging_config import logger
 
 

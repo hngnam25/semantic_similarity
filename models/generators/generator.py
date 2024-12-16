@@ -1,9 +1,18 @@
-from langchain import PromptTemplate,LLMChain
-from langchain.llms import OpenAI, HuggingFaceHub
+from langchain_core.prompts import PromptTemplate
+from langchain.prompts.chat import (
+    ChatPromptTemplate,
+    SystemMessagePromptTemplate,
+    HumanMessagePromptTemplate,
+)
+
+from langchain.chat_models import ChatOpenAI
 from typing import List, Dict
 from scripts.logging_config import logger
 import os
+from dotenv import load_dotenv
+import openai
 
+openai.api_key = os.getenv('OPENAI_API_KEY')
 class LangChainGenerator:
     def __init__(self, model_name: str = 'gpt-4o', temperature: float = 0.2, max_tokens: int = 500):
         """
@@ -20,11 +29,10 @@ class LangChainGenerator:
             self.temperature = temperature
             self.max_tokens = max_tokens
 
-            self.llm = OpenAI(
+            self.llm = ChatOpenAI(
                 model_name = model_name,
                 temperature = temperature,
                 max_tokens = max_tokens,
-                openai_api_keys = os.getenv('OPENAI_API_KEY')
             )
             logger.info(f"LLM initialized with model: '{model_name}'")
         except Exception as e:
@@ -43,42 +51,34 @@ class LangChainGenerator:
             str: Generated answer.
         """
         try: 
-             #Construct the prompt 
-             prompt = self.construct_prompt(query, retrieved_docs)
-             logger.debug(f"Constructed prompt: '{prompt}'")
-
-             #Create a prompt template
-             prompt_template = PromptTemplate(
-                   input_variables=["question", "context"],
-                   template="Question: {question}\n\nRelevant Information:\n{context}\n\nAnswer:"
-             )
-
+             # Construct the context from retrieved docs
+             context = ""
+             for idx, doc in enumerate(retrieved_docs, 1):
+                context += f"{idx}. {doc['text']}\n\n"
+            # Create a chat prompt template
+             chat_prompt = ChatPromptTemplate.from_messages([
+                            SystemMessagePromptTemplate.from_template(
+                                "You are a helpful assistant. Use the following context to answer the question."
+                            ),
+                            HumanMessagePromptTemplate.from_template(
+                                "Question: {question}\n\nContext:\n{context}\n\nAnswer:"
+                            ),
+             ])
+            # Prepare the input variables
+             input_variables = {
+            "question": query,
+            "context": context,
+            }
              #Create an LLMChain
-             chain = LLMChain(prompt=prompt_template, llm=self.llm)
+             chain = chat_prompt | self.llm
 
              #Generate the answere 
-             answer = chain.run()
+             answer = chain.invoke(input_variables)
              logger.info("LLM generated an answer succesfully")
-             return answer.strip()
+             return answer.content.strip()
         except Exception as e:
             logger.error(f"Error getting answer: {e}")
             return "I'm sorry I could not generate an answerr at this time"
         
-    def construct_prompt(query: str, retrieved_docs: List[Dict]) -> str:
-        """
-        Constructs a prompt for the LLM by combining the query with retrieved documents.
-
-        Args:
-            query (str): The user's natural language query.
-            retrieved_docs (List[Dict]): List of retrieved document chunks with metadata.
-
-        Returns:
-            str: The constructed prompt.
-        """
-        prompt = f"Question: {query}\n\nRelevant Information:\n"
-        for idx, doc in enumerate(retrieved_docs, 1):
-            prompt += f"{idx}. {doc['text']}\n\n"
-        prompt += "Answer:"
-        return prompt
 
     
